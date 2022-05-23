@@ -1,0 +1,11 @@
+html{
+    background-color:white;
+}
+
+body{
+    width: 800px;
+    margin: 0 auto;
+    padding: 0 20px 20px 20px;
+    background-color: cyan;
+    border: 8px solid cyan;
+}

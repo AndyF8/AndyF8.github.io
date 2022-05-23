@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Praktikum PKW</title>
+        <link rel = "stylesheet" href= "act9.css">
+    </head>
+
+    <body>
+        <h1><center>Form Pendaftaran Siswa SMA 05</center></h1>
+        <br />
+        <br />
+        <form >
+            <label for="nama">Nama</label><br><br/>
+            <input type ="text" name="nama" id="nama"/>
+            <br />
+            <br />
+            <br />
+            <label for="umur">Umur</label><br><br/>
+            <input type ="text" name="umur" id="umur"/>
+            <br />
+            <br />
+            <br />
+            <label for="alamat">Alamat Siswa</label><br><br/>
+            <textarea name="alamat" id="alamat" cols="40" rows="4"></textarea>
+            <br />
+            <br />
+            <br />
+            <label for="asal">Asal Sekolah</label><br><br/>
+            <input type ="text" name="asal" id="asal"/>
+            <br />
+            <br />
+            <br />
+            <label for="kelamin">Jenis Kelamin</label><br><br/>
+            <input type ="radio" name="kelamin" id="kelamin" value="pria"/>Pria
+            <input type ="radio" name="kelamin" id="kelamin" value="wanita"/>Wanita
+            <br />
+            <br />
+            <br />
+            <label for="fro">Darimana anda mengetahui info pendaftaran online SMA 05 : </label><br><br/>
+            <input type="checkbox" name="fro" id="fro" value="Sosial Media" />Sosial Media <br><br/>
+            <input type="checkbox" name="fro" id="fro" value="brosur" />brosur <br><br/>
+            <input type="checkbox" name="fro" id="fro" value="dari orang lain" />Dari Orang lain
+            <br />
+            <br />
+            <br />
+            <label for="nama00">Nama Orang Tua :</label><br><br/>
+            <label for="ayah">Nama Bapak</label>
+            <input type ="text" name="ayah" id="ayah"/><br><br/>
+            <label for="ibu">Nama Ibu</label>
+            <input type ="text" name="ibu" id="ibu"/>
+            <br />
+            <br />
+            <br />
+            <label for="job">Pekerjaan Orang Tua :</label><br><br/>
+            <label for="ayah00">Pekerjaan Bapak</label>
+            <input type ="text" name="ayah00" id="ayah00"/><br><br/>
+            <label for="ibu00">Pekerjaan Ibu</label>
+            <input type ="text" name="ibu00" id="ibu00"/>
+            <br />
+            <br />
+            <br />
+            <label for="gaji">Gaji Pekerjaan Orang Tua :</label><br><br/>
+            <label for="ayah01">Gaji Bapak</label><br><br/>
+            <input type ="radio" name="ayah01" id="ayah01" value="Kurang dari Rp.2.000.000"/>Kurang dari Rp.2.000.000<br><br/>
+            <input type ="radio" name="ayah01" id="ayah01" value="Rp.3.000.000"/>Rp.3.000.000<br><br/>
+            <input type ="radio" name="ayah01" id="ayah01" value="Lebih dari Rp.5.000.000"/>Lebih dari Rp.5.000.000<br><br/>
+            <label for="ibu01">Gaji Ibu</label><br><br/>
+            <input type ="radio" name="ibu01" id="ibu01" value="Kurang dari Rp.2.000.000"/>Kurang dari Rp.2.000.000<br><br/>
+            <input type ="radio" name="ibu01" id="ibu01" value="Rp.3.000.000"/>Rp.3.000.000<br><br/>
+            <input type ="radio" name="ibu01" id="ibu01" value="Lebih dari Rp.5.000.000"/>Lebih dari Rp.5.000.000
+            <br />
+            <br />
+            <br />
+            <label for="sejak">Apakah anda setuju untuk mengikuti rangkaian proses pendaftaran SMA 05 ?</label><br><br/>
+            <input type ="radio" name="apakah" id="apakah" value="ya"/>ya<br><br/>
+            <input type ="radio" name="apakah" id="apakah" value="tidak"/>tidak<br><br/><br><br>
+
+            <input type="button" value="Tampilkan" onclick="li()"/>
+
+           
+
+        </form>
+
+        <script>
+            console.log("daftar");
+            alert("Selamat Datang di Web Pendaftaran SMA 05");
+        
+            function li() {
+
+              var nama = document.getElementById("nama").value;
+              var umur = document.getElementById("umur").value;
+              var alamat = document.getElementById("alamat").value;
+              var sekolah = document.getElementById("asal").value;
+              var kelamin = document.querySelector("input[name=kelamin]:checked").value;
+              var info = document.getElementsByName("fro");
+              var info00 = ''
+
+
+             for(var fro2 of fro){
+               if(fro2.checked) {
+                 info00 += ', ' + fro2.value
+                }
+             }
+
+              info00 = info00.substring(1)
+
+              var ayah = document.getElementById("ayah").value;
+              var ibu = document.getElementById("ibu").value;
+              var kerayah = document.getElementById("ayah00").value;
+              var keribu= document.getElementById("ibu00").value;
+              var gayah = document.querySelector("input[name=ayah01]:checked").value;
+              var gibu = document.querySelector("input[name=ibu01]:checked").value;
+              var tanya = document.querySelector("input[name=apakah]:checked").value;
+             
+
+
+              alert(
+                
+                "Terima kasih telah mengisi form pendaftaran. Berikut data anda :    "+
+                  "Nama : " +
+                  nama +
+                  "\nUmur : " +
+                  umur +
+                  "\nAlamat : " +
+                  alamat +
+                  "\nAsal Sekolah : " +
+                  sekolah +
+                  "\nJenis Kelamin : " +
+                  kelamin +
+                  "\nDarimana anda mengetahui info pendaftaran online SMA 05 : " +
+                  info00 +
+                  "\nNama Bapak : " +
+                  ayah +
+                  "\nNama Ibu : " +
+                  ibu +
+                  "\nPekerjaan Bapak : " +
+                  kerayah +
+                  "\nPekerjaan Ibu : " +
+                  keribu +
+                  "\nGaji Bapak : " +
+                  gayah +
+                  "\nGaji Ibu : " +
+                  gibu +
+                  "\nApakah anda setuju untuk mengikuti rangkaian proses pendaftaran SMA 05 : " +
+                  tanya
+
+                
+
+              );
+               
+             
+            }
+
+        </script>
+
+        
+    </body>
+</html>
